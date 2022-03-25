@@ -23,7 +23,7 @@ const ExpenseForm = (props) => {
 
         // setUserInput((prevState) => {
         //     return {
-        //         ...userInput,
+        //         ...prevState,
         //         enteredTitle: event.target.value
         //     };
         
@@ -41,7 +41,7 @@ const ExpenseForm = (props) => {
 
         // setUserInput((prevState) => {
         //     return {
-        //         ...userInput,
+        //         ...prevState,
         //         enteredAmount: event.target.value
         //     };
         // });
@@ -60,7 +60,7 @@ const ExpenseForm = (props) => {
 
         // setUserInput((prevState) => {
         //     return {
-        //         ...userInput,
+        //         ...prevState,
         //         enteredDate: event.target.value
         //     };
         // });
