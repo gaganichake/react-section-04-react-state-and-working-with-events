@@ -5,13 +5,16 @@ import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 
 const Expenses = (props) => {
-
-  const [filteredYear, setFilteredYear] = useState("2022"); // You may set the default year here
+  const [filteredYear, setFilteredYear] = useState('2022'); // You may set the default year here
 
   const filterYearHander = (selectedYear) => {
     setFilteredYear(selectedYear);
     //console.log(selectedYear);
   };
+
+  const filteredExpenses = props.expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
 
   return (
     <Card className="expenses">
@@ -19,7 +22,7 @@ const Expenses = (props) => {
         defaultYear={filteredYear}
         onFilterYear={filterYearHander}
       />
-      {props.expenses.map((expense) => (
+      {filteredExpenses.map((expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
