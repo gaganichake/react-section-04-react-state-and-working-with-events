@@ -3,6 +3,7 @@ import "./Expenses.css";
 import Card from "./../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2022"); // You may set the default year here
@@ -22,6 +23,7 @@ const Expenses = (props) => {
         defaultYear={filteredYear}
         onFilterYear={filterYearHander}
       />
+      <ExpensesChart expenses={filteredExpenses}/>
       <ExpensesList expenses={filteredExpenses} />
     </Card>
   );
